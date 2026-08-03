@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emerging Technologies Matching Activity</title>
+
+  <style>
+    :root {
+      --teal-dark: #176b6f;
+      --teal: #238b8f;
+      --teal-light: #e4f3f2;
+      --teal-pale: #f4faf9;
+      --border: #b9d7d5;
+      --text: #243536;
+      --success-bg: #e8f5ec;
+      --success-border: #9bc5a6;
+      --success-text: #28583a;
+      --error-bg: #f9ece9;
+      --error-border: #daa9a0;
+      --error-text: #7a3e35;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6f1;
+      margin: 0;
+      padding: 16px;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(23, 107, 111, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.55rem;
+      line-height: 1.25;
+      text-align: center;
+      color: var(--teal-dark);
+    }
+
+    .instructions {
+      background: var(--teal-light);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .item {
+      background: var(--teal-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .item label {
+      display: block;
+      margin-bottom: 9px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--teal-dark);
+    }
+
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    select:focus {
+      outline: 3px solid rgba(35, 139, 143, 0.18);
+      border-color: var(--teal);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 17px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--teal-dark);
+      color: #ffffff;
+    }
+
+    .primary:hover {
+      background: #10595d;
+    }
+
+    .secondary {
+      background: #788b8c;
+      color: #ffffff;
+    }
+
+    .secondary:hover {
+      background: #627576;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .feedback.correct {
+      display: block;
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: var(--success-text);
+    }
+
+    .feedback.incorrect {
+      display: block;
+      background: var(--error-bg);
+      border: 1px solid var(--error-border);
+      color: var(--error-text);
+    }
+
+    .result-list {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      font-weight: normal;
+    }
+
+    .result-list li {
+      margin-bottom: 7px;
+      line-height: 1.45;
+    }
+
+    .item.correct-item {
+      border-color: var(--success-border);
+      background: var(--success-bg);
+    }
+
+    .item.incorrect-item {
+      border-color: var(--error-border);
+      background: var(--error-bg);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 14px;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+      }
+
+      select,
+      button {
+        font-size: 16px;
+      }
+
+      button {
+        flex: 1 1 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Emerging Technologies</h1>
+
+    <div class="instructions">
+      <strong>Match each technology to its purpose.</strong>
+    </div>
+
+    <div class="item" id="card1">
+      <label for="item1">1. Internet of Things (IoT)</label>
+      <select id="item1">
+        <option value="">Select a description</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+      </select>
+    </div>
+
+    <div class="item" id="card2">
+      <label for="item2">2. Machine Learning and Artificial Intelligence (ML/AI)</label>
+      <select id="item2">
+        <option value="">Select a description</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+      </select>
+    </div>
+
+    <div class="item" id="card3">
+      <label for="item3">3. Blockchain</label>
+      <select id="item3">
+        <option value="">Select a description</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+      </select>
+    </div>
+
+    <div class="item" id="card4">
+      <label for="item4">4. Digital Twins</label>
+      <select id="item4">
+        <option value="">Select a description</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+      </select>
+    </div>
+
+    <div class="item" id="card5">
+      <label for="item5">5. Cyber-Physical Systems (CPS)</label>
+      <select id="item5">
+        <option value="">Select a description</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+      </select>
+    </div>
+
+    <div class="item" id="card6">
+      <label for="item6">6. Biosensors</label>
+      <select id="item6">
+        <option value="">Select a description</option>
+        <option value="ml-ai">Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.</option>
+        <option value="blockchain">Uses a distributed ledger to keep patient records secure and tamper-proof.</option>
+        <option value="iot">Connects sensors and devices to collect and transmit real-time health data.</option>
+        <option value="biosensors">Converts biological responses into electrical signals for monitoring and early detection.</option>
+        <option value="cps">Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.</option>
+        <option value="digital-twins">Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.</option>
+      </select>
+    </div>
+
+    <div class="buttons">
+      <button class="primary" type="button" onclick="checkAnswers()">Check answers</button>
+      <button class="secondary" type="button" onclick="resetActivity()">Reset</button>
+    </div>
+
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const answers = {
+      item1: "iot",
+      item2: "ml-ai",
+      item3: "blockchain",
+      item4: "digital-twins",
+      item5: "cps",
+      item6: "biosensors"
+    };
+
+    const labels = {
+      item1: "Internet of Things",
+      item2: "Machine Learning and Artificial Intelligence",
+      item3: "Blockchain",
+      item4: "Digital Twins",
+      item5: "Cyber-Physical Systems",
+      item6: "Biosensors"
+    };
+
+    const correctDescriptions = {
+      item1: "Connects sensors and devices to collect and transmit real-time health data.",
+      item2: "Uses algorithms and large datasets for prediction, diagnosis, modelling and personalised medicine.",
+      item3: "Uses a distributed ledger to keep patient records secure and tamper-proof.",
+      item4: "Creates virtual models to test treatment scenarios, predict equipment failures and guide decisions.",
+      item5: "Links physical processes with computational models for technologies such as robotic surgery and smart ICUs.",
+      item6: "Converts biological responses into electrical signals for monitoring and early detection."
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      const total = Object.keys(answers).length;
+      let results = "<ul class='result-list'>";
+
+      Object.keys(answers).forEach((key, index) => {
+        const select = document.getElementById(key);
+        const card = document.getElementById("card" + (index + 1));
+        const response = select.value;
+
+        card.classList.remove("correct-item", "incorrect-item");
+
+        if (response === answers[key]) {
+          score++;
+          card.classList.add("correct-item");
+          results += `<li>${labels[key]}: Correct</li>`;
+        } else if (response === "") {
+          card.classList.add("incorrect-item");
+          results += `<li>${labels[key]}: No answer selected</li>`;
+        } else {
+          card.classList.add("incorrect-item");
+          results += `<li>${labels[key]}: Incorrect. Correct match: ${correctDescriptions[key]}</li>`;
+        }
+      });
+
+      results += "</ul>";
+
+      const feedback = document.getElementById("feedback");
+
+      if (score === total) {
+        feedback.className = "feedback correct";
+        feedback.innerHTML =
+          `<strong>Well done. You got ${score} out of ${total} correct.</strong>${results}`;
+      } else {
+        feedback.className = "feedback incorrect";
+        feedback.innerHTML =
+          `<strong>You got ${score} out of ${total} correct.</strong>${results}`;
+      }
+
+      feedback.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    function resetActivity() {
+      Object.keys(answers).forEach((key, index) => {
+        document.getElementById(key).value = "";
+        document
+          .getElementById("card" + (index + 1))
+          .classList.remove("correct-item", "incorrect-item");
+      });
+
+      const feedback = document.getElementById("feedback");
+      feedback.className = "feedback";
+      feedback.innerHTML = "";
+    }
+  </script>
+</body>
+</html>
